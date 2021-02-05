@@ -13,6 +13,7 @@ Used Ports:
 Used Libraries: (must be installed in the arduino IDE):
 
 https://github.com/espressif/arduino-esp32
+
 https://github.com/tzapu/WiFiManager
 
 
