@@ -1,6 +1,8 @@
 # UAV-Serial-Bridge
 
 This is a marriage of ESP32-Serial-Bridge by AlphaLima and WiFiManager by tzapu. It is functional, even if the code is perhaps a bit messy (still working on that). I suggest using COM1. Connect GPIO16 of the ESP32 to the TX pad on your flight controller and connect GPIO17 to the RX pad on your flight controller. Set the BAUD rate of the UART on your flight controller to 115200. 
+
+
 Used Ports:                                                                                                          
 192.168.4.1:8880  <-> COM0                                     
 192.168.4.1:5760  <-> COM1                                     
