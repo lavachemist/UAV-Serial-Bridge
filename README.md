@@ -1,14 +1,9 @@
-# ESP32-Serial-Bridge
+# UAV-Serial-Bridge
 
-Transparent WiFi (TCP) to all three UART Bridge, supports both AP and STATION WiFi modes. The .ino file is the code for the ESP32. Use Arduino IDE for ESP32 to compile and upload it to the ESP32.
-I made this project in order to connect Flight equipment devices devices like (Radio, Vario FLARM), to a Flight Computer (Kobo, Smartphones etc.),  but it is not limited to that. You can use it wherever you want, but on your own risk. Read license file for more details.
-Accesspoint                                                    
-IPAdress: 192.168.4.1                                           
-AP SSID: LK8000                                                   
-AP Password: Flightcomputer                                       
+This is a marriage of ESP32-Serial-Bridge by AlphaLima and WiFiManager by tzapu. It is functional, even if the code is perhaps a bit messy (still working on that). I suggest using COM1. Connect GPIO16 of the ESP32 to the TX pad on your flight controller and connect GPIO17 to the RX pad on your flight controller. Set the BAUD rate of the UART on your flight controller to 115200. 
 Used Ports:                                                                                                          
 192.168.4.1:8880  <-> COM0                                     
-192.168.4.1:8881  <-> COM1                                     
+192.168.4.1:5760  <-> COM1                                     
 192.168.4.1:8882  <-> COM2                                     
 
 ===============================================================
@@ -16,7 +11,14 @@ Used Ports:
 Used Libraries: (must be installed in the arduino IDE):
 
 https://github.com/espressif/arduino-esp32
+https://github.com/tzapu/WiFiManager
 
+
+===============================================================
+
+Use Arduino IDE to flash the .ino file onto your ESP32. Upon booting up, you will be able to connect to your ESP32 via WiFi via the SSID called "AutoConnectAP." This will automatically launch a browser window where you can select the WiFi network you want to connect your ESP32 to. Select the WiFi SSID and provide the password. Once your ESP32 is connected to WiFi, you will need to determine what it's IP address is (more instructions later, but you should be able to figure this out). Once your WiFi network is selected, you will be able to connect to the ESP32 with your chosen mission planner via TCP at port 5760 at the IP address of your ESP32.
+
+The ESP32 will automatically attempt to connect to the Wifi network you selected at ever bootup. If it can't connect to it, you will be able to connect to the "AutoConnectAP" SSID again and select a different WLAN to connect to.
 
 ===============================================================
 
